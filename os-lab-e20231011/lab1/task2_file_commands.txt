@@ -1,0 +1,13 @@
+/home/gic-bora-picheth/oslab-work/lab1/task2_files
+garden.txt
+maple.txt
+This is file garden
+This is file maple
+garden.txt
+garden_copy.txt
+maple.txt
+garden.txt
+garden_copy.txt
+maple_renamed.txt
+garden.txt
+maple_renamed.txt
