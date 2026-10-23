@@ -2,4 +2,4 @@
 drwxr-xr-x 2 root root 4096 Oct 16 19:53 /etc/mc
 drwxr-xr-x 2 root root 4096 Oct 16 19:55 /etc/mc
 ls: cannot access '/etc/mc': No such file or directory
-ls: cannot access '/etc/mc': No such file or directory
+
