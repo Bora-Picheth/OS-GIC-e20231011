@@ -1,0 +1,15 @@
+ 1402  code .
+ 1403  cd task1
+ 1404  gcc -o forkchild forkchild.c
+ 1405  ./forkchild > result_forkchild.txt 2>&1
+ 1406  cat result_forkchild.txt
+ 1407  clear
+ 1408  cat result_forkchild.txt
+ 1409  gcc -o forkchild forkchild.c
+ 1410  ./forkchild > result_forkchild.txt 2>&1
+ 1411  cat result_forkchild.txt
+ 1412  gcc -o forkchild forkchild.c
+ 1413  ./forkchild > result_forkchild.txt 2>&1
+ 1414  cat result_forkchild.txt
+ 1415  ./forkchild > result_forkchild.txt 2>&1
+ 1416  history | tail -n 20 > command_used_forkchild.txt
