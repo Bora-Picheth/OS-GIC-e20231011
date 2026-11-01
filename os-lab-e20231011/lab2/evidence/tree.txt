@@ -1,0 +1,7 @@
+reports/README.txt
+reports/sales north.txt
+reports/vendor list.txt
+TechCorp/Audit/archive/first-original.txt
+TechCorp/Audit/sales north.txt
+TechCorp/Audit/vendor list.txt
+TechCorp/Support/found.txt

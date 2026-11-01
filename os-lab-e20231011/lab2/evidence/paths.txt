@@ -1,0 +1,7 @@
+mv "incoming/sales north.txt" reports/
+mv "$OSLAB_WORKSPACE/lab2/incoming/vendor list.txt" "$OSLAB_WORKSPACE/lab2/reports/"
+cp "reports/sales north.txt" "reports/vendor list.txt" TechCorp/Audit/
+I used relative paths for step 3 because the folders were in the same working directory.
+Error: cat: 'reports/sales north.txt': No such file or directory
+Fix: ../../reports/sales north.txt
+
