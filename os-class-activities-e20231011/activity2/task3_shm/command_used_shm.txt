@@ -1,0 +1,20 @@
+   26  ls -a
+   27  cd .ssh
+   28  ;s
+   29  ls
+   30  nano config
+   31  cd ..
+   32  ssh school
+   33  ssh gic-bora-picheth@192.168.71.175
+   34  ssh gic-bora-picheth@ssh2.rathpisey.site
+   35  cd task3_shm
+   36  gcc -o shm-producer shm-producer.c -lrt
+   37  gcc -o shm-consumer shm-consumer.c -lrt
+   38  sudo apt update
+   39  sudo apt install gcc
+   40  gcc -o shm-producer shm-producer.c -lrt
+   41  gcc -o shm-consumer shm-consumer.c -lrt
+   42  ./shm-producer
+   43  ./shm-consumer > result-shm-ipc.txt
+   44  cat result-shm-ipc.txt
+   45  history | tail -n 20 > command_used_shm.txt

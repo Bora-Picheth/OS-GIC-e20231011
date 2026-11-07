@@ -13,21 +13,33 @@ int main() {
 
     printf("Parent process (PID: %lu) — creating child...\n", GetCurrentProcessId());
 
-    /* Use a mutable buffer for the command line */
-    char cmd[] = "notepad.exe";
-
-    if (!CreateProcess(
-            NULL,           /* Application path */
-            cmd,            /* Command line (mutable buffer) */
-            NULL,           /* Process security attributes */
-            NULL,           /* Thread security attributes */
-            FALSE,          /* Inherit handles */
-            0,              /* Creation flags */
-            NULL,           /* Environment */
-            NULL,           /* Current directory */
-            &si,            /* Startup info */
-            &pi             /* Process information */
-        ))
+    /*
+     * CreateProcess() parameters:
+     *   lpApplicationName  — Full path to the executable
+     *   lpCommandLine      — Command line string (NULL if using lpApplicationName)
+     *   ... other parameters set to defaults ...
+     *   lpStartupInfo      — Pointer to STARTUPINFO
+     *   lpProcessInformation — Receives the new process info
+     *
+     * NOTE: The path to mspaint.exe is typically:
+     *   "C:\\Windows\\System32\\mspaint.exe"
+     *
+     * If mspaint.exe is not at this path on your system, open Task Manager,
+     * run mspaint manually, right-click the process, and select
+     * "Open file location" to find the correct path.
+     */
+if (!CreateProcess(
+        "C:\\Users\\borap\\AppData\\Local\\Microsoft\\WindowsApps\\mspaint.exe",  /* Application path */
+        NULL,           /* Command line */
+        NULL,           /* Process security attributes */
+        NULL,           /* Thread security attributes */
+        FALSE,          /* Inherit handles */
+        0,              /* Creation flags */
+        NULL,           /* Environment */
+        NULL,           /* Current directory */
+        &si,            /* Startup info */
+        &pi             /* Process information */
+    ))
     {
         fprintf(stderr, "CreateProcess failed (error %lu).\n", GetLastError());
         return 1;
@@ -37,9 +49,14 @@ int main() {
     printf("  Child PID:       %lu\n", pi.dwProcessId);
     printf("  Child Thread ID: %lu\n", pi.dwThreadId);
 
-    printf("Parent: waiting for child to exit...\n");
+    /*
+     * Wait for the child process to finish.
+     * mspaint will stay open — close it manually when you're done observing.
+     * WaitForSingleObject blocks until the child terminates.
+     */
+    printf("Parent: waiting for child (mspaint) to exit...\n");
     printf(">>> Open Task Manager now and take a screenshot! <<<\n");
-    printf(">>> Then close the child window to finish. <<<\n");
+    printf(">>> Then close mspaint to let this program finish. <<<\n");
 
     WaitForSingleObject(pi.hProcess, INFINITE);
 

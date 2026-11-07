@@ -1,14 +1,14 @@
-Parent process (PID: 29505) — creating child...
-Child process (PID: 29506, Parent PID: 29505)
+Parent process (PID: 2869) — creating child...
+Child process (PID: 2870, Parent PID: 2869)
 Child: sleeping 30s — observe the process tree now!
 Child: now executing 'ls -la'...
-total 36
-drwxrwxr-x 2 picheth picheth  4096 Nov  1 14:04 .
-drwxrwxr-x 3 picheth picheth  4096 Nov  1 13:33 ..
--rwxrwxr-x 1 picheth picheth 16488 Nov  1 14:04 forkchild
--rw-rw-r-- 1 picheth picheth  1476 Nov  1 14:04 forkchild.c
--rw-rw-r-- 1 picheth picheth     0 Nov  1 13:48 README.md
--rw-rw-r-- 1 picheth picheth   183 Nov  1 14:06 result_forkchild.txt
-Parent: waiting for child (PID: 29506) to finish...
+total 24
+drwxrwxrwx 1 picheth picheth  4096 Nov  7 10:37 .
+drwxrwxrwx 1 picheth picheth  4096 Nov  7 10:19 ..
+-rwxrwxrwx 1 picheth picheth   539 Nov  2 07:40 command_used_forkchild.txt
+-rwxrwxrwx 1 picheth picheth 16480 Nov  7 10:36 forkchild
+-rwxrwxrwx 1 picheth picheth  1533 Nov  2 07:40 forkchild.c
+-rwxrwxrwx 1 picheth picheth   180 Nov  7 10:37 result_forkchild.txt
+Parent: waiting for child (PID: 2870) to finish...
 Parent: child exited with status 0
 Parent: done.
