@@ -1,0 +1,32 @@
+picheth     7170    4063    7170  0    5 19:14 pts/6    00:00:00 ./threads_observe
+picheth     7170    4063    7172  0    5 19:14 pts/6    00:00:00 ./threads_observe
+picheth     7170    4063    7173  0    5 19:14 pts/6    00:00:00 ./threads_observe
+picheth     7170    4063    7174  0    5 19:14 pts/6    00:00:00 ./threads_observe
+picheth     7170    4063    7175  0    5 19:14 pts/6    00:00:00 ./threads_observe
+picheth     7266    4063    7266  0    1 19:16 pts/6    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+   7170    7170 pts/6    00:00:00 threads_observe
+   7170    7172 pts/6    00:00:00 threads_observe
+   7170    7173 pts/6    00:00:00 threads_observe
+   7170    7174 pts/6    00:00:00 threads_observe
+   7170    7175 pts/6    00:00:00 threads_observe
+--- /proc/7170/task/ listing ---
+7170
+7172
+7173
+7174
+7175
+    PID     LWP NLWP PSR STAT COMMAND
+   7170    7170    5   3 Sl   threads_observe
+   7170    7172    5   8 Sl   threads_observe
+   7170    7173    5  10 Sl   threads_observe
+   7170    7174    5  12 Sl   threads_observe
+   7170    7175    5  14 Sl   threads_observe
+    PID    PPID PSR COMMAND
+      3       2  22 init-watcher
+      8       2   5 init
+    392       2  31 login
+   3737       2  27 login
+   4029       2  21 SessionLeader
+   4056       2  21 SessionLeader
+   5436       2  19 SessionLeader

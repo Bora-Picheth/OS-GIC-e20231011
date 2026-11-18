@@ -1,0 +1,30 @@
+  151  PID=$(pgrep -n threads_observe)
+  152  ps -eLf | grep threads_observe > result_observe_linux.txt
+  153  ps -T -p $PID >> result_observe_linux.txt
+  154  echo "--- /proc/$PID/task/ listing ---" >> result_observe_linux.txt
+  155  ls /proc/$PID/task/ >> result_observe_linux.txt
+  156  htop
+  157  clear
+  158  ./threads_observe &
+  159  htop
+  160  ./threads_observe &
+  161  htop
+  162  cd ~/activity3/Task4
+  163  sed -i 's/sleep([0-9]*)/sleep(300)/g' threads_observe.c
+  164  gcc -o threads_observe threads_observe.c -pthread
+  165  ./threads_observe &
+  166  htop
+  167  ./threads_observe &
+  168  htop
+  169  PID=$(pgrep -n threads_observe)
+  170  ps -L -o pid,lwp,nlwp,psr,stat,comm -p $PID
+  171  ps -o pid,ppid,psr,comm -p 2
+  172  ps --ppid 2 -o pid,ppid,psr,comm | head -15
+  173  ps -eLf | grep threads_observe > result_observe_linux.txt
+  174  ps -T -p $PID >> result_observe_linux.txt
+  175  echo "--- /proc/$PID/task/ listing ---" >> result_observe_linux.txt
+  176  ls /proc/$PID/task/ >> result_observe_linux.txt
+  177  { ps -L -o pid,lwp,nlwp,psr,stat,comm -p $PID; ps --ppid 2 -o pid,ppid,psr,comm | head -15; } >> result_observe_linux.txt
+  178  echo "Note: WSL2 hides kernel threads (PID 2 is WSL init instead of kthreadd), so kernel worker threads do not appear in htop or ps." > README.md
+  179  kill $PID
+  180  history | tail -n 30 > command_used_observe.txt

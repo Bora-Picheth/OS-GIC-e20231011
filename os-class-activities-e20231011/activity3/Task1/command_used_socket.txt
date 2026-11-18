@@ -1,0 +1,20 @@
+    /* 6. Close socket */
+    close(sock_fd);
+    printf("Client: connection closed.\n");
+
+    return 0;
+}
+EOF
+
+   95  gcc -Wall -o server server.c
+   96  gcc -Wall -o client client.c
+   97  cd ~/activity3/task1_socket && ./server
+   98  clear
+   99  cd ~/activity3/task1_socket && ./server
+  100  ./server > result_server.txt 2>&1 &
+  101  sleep 1
+  102  ./client > result_client.txt 2>&1
+  103  wait
+  104  cat result_server.txt result_client.txt > result_socket.txt
+  105  cat result_socket.txt
+  106  history | tail -n 20 > command_used_socket.txt
