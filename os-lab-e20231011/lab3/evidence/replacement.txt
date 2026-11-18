@@ -1,0 +1,9 @@
+
+=== NEW FILE USING THE OLD NAME ===
+18752082 -rw-rw-r-- 2 gic-bora-picheth gic-bora-picheth 12 Nov  6 07:57 market-final.txt
+18752082 -rw-rw-r-- 2 gic-bora-picheth gic-bora-picheth 12 Nov  6 07:57 market-hard.txt
+18752395 lrwxrwxrwx 1 gic-bora-picheth gic-bora-picheth 10 Nov 11 14:01 market-soft.txt -> market.txt
+18752407 -rw-rw-r-- 1 gic-bora-picheth gic-bora-picheth 12 Nov 11 14:02 market.txt
+market.txt: version 787
+hard: version 730
+soft: version 787
